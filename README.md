@@ -60,7 +60,7 @@ Instructions on how to get started with your Terraform project:
 
 ## Usage
 
-Just add your hostname:target combinations in the var.hostnames{} map in terraform.tfvars file:
+Just set the correct values in the terraform.tfvars file and add your hostname:target combinations in the var.hostnames{} map:
 ```
 hostnames = {
   "beta.great-demo.com"         = "beta-target.grinwis.com",
