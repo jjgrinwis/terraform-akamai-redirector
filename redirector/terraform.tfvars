@@ -2,14 +2,15 @@
 group_name = "Ion Standard Beta Jam 1-3-16TWBVX"
 
 # this is an exising cpcode name connected to the right product (ion)
-# you can find cpcodes via akamai pm lcp -g grp_id -c ctr_id
+# you can find cpcodes via "akamai pm lcp -g grp_id -c ctr_id"
+# grp_id and ctr_id via "akamai pm lg"
 cpcode = "demo.grinwis.com"
 
 # what user to inform when hostname has been created
 email = "nobody@akamai.com"
 
 # first part of our shared edge_hostname
-# the edgekey|edgesuite.net part based on selected platform
+# the edgekey|edgesuite.net part of edgehostname based on selected platform, FF|ESSL.
 hostname = "redirect.great-demo.com"
 
 # our hostnames for redirect part that our going to be dynamically created
