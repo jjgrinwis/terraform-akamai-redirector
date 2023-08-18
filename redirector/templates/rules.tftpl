@@ -1,0 +1,83 @@
+${jsonencode(
+  {
+    "rules": {
+      "name": "default",
+      "children": [{
+        "name": "Redirects",
+        "children": [ for k,v in hostnames :
+        {
+            "name": "${k}",
+            "children": [],
+            "behaviors": [{
+              "name": "redirect",
+              "options": {
+                "mobileDefaultChoice": "DEFAULT",
+                "destinationProtocol": "HTTPS",
+                "destinationHostname": "OTHER",
+                "destinationPath": "SAME_AS_REQUEST",
+                "queryString": "APPEND",
+                "responseCode": 301,
+                "destinationHostnameOther": "${v}"
+              }
+            }],
+            "criteria": [{
+              "name": "hostname",
+              "options": {
+                "matchOperator": "IS_ONE_OF",
+                "values": [
+                  "${k}"
+                ]
+              }
+            }],
+            "criteriaMustSatisfy": "all",
+            "comments": ""
+          }
+        ],
+        "behaviors": [],
+        "criteria": [],
+        "criteriaMustSatisfy": "all",
+        "comments": ""
+      }],
+      "behaviors": [{
+          "name": "origin",
+          "options": {
+            "cacheKeyHostname": "REQUEST_HOST_HEADER",
+            "compress": true,
+            "enableTrueClientIp": true,
+            "forwardHostHeader": "ORIGIN_HOSTNAME",
+            "httpPort": 80,
+            "httpsPort": 443,
+            "originCertificate": "",
+            "originSni": true,
+            "originType": "CUSTOMER",
+            "ports": "",
+            "trueClientIpClientSetting": false,
+            "trueClientIpHeader": "True-Client-IP",
+            "verificationMode": "PLATFORM_SETTINGS",
+            "hostname": "headers.grinwis.com"
+          }
+        },
+        {
+          "name": "caching",
+          "options": {
+            "behavior": "NO_STORE"
+          }
+        },
+        {
+          "name": "cpCode",
+          "options": {
+            "value": {
+              "id": cp_code_id,
+              "name": cp_code_name
+            }
+          }
+        }
+      ],
+      "options": {
+        "is_secure": false
+      },
+      "variables": [],
+      "comments": "The Default Rule template contains all the necessary and recommended features. Rules are evaluated from top to bottom and the last matching rule wins."
+    }
+  }
+)}
