@@ -25,7 +25,7 @@ provider "akamai" {
 
 # just use group_name to lookup our contract_id and group_id
 # this will simplify our variables file as this contains contract and group id
-# use "akamai property groups list" to find all your groups
+# use the akamai cli "akamai pm lg" to find all your groups.
 data "akamai_contract" "contract" {
   group_name = var.group_name
 }
@@ -102,7 +102,8 @@ resource "akamai_property_activation" "aka_staging" {
 
 # if you your DNS provider has a Terraform module just use it here to create the CNAME records
 # let's create our DV records using a module with with different credentials.
-# Terraform has some limitations regarding using count and for_each with a module and separate provider configs
+# Terraform used to have limitations regarding using count and for_each with a module and separate provider configs
+# should be fixed now using that provider option this version still using legacy method.
 # Providers cannot be configured within modules using count, for_each or depends_on
 # so just feeding our edgehostname created dv strings into our edgedns_cname module as a test for secure_by_default
 module "edgedns_cert_cname" {
@@ -116,7 +117,9 @@ module "edgedns_cert_cname" {
   # feeding our local created map of maps var
   dv_records = local.dv_records
 
-  # we're now able to use depends_on with a module by making this explicit reference in our main module 
+  # using the providers option so we don't have to specify credentials in the module itself.
+  # this also gives us the option to use for_each etc.
+  # https://developer.hashicorp.com/terraform/language/modules/develop/providers#passing-providers-explicitly
   providers = {
     akamai = akamai.edgedns
   }
