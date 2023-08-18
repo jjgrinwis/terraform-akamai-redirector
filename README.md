@@ -1,7 +1,7 @@
 # Terraform Akamai Redirect Infrastructure Project
 
-This project provides infrastructure automation using Terraform.
-If will create a Akamai configuration just to create redirects.
+This project provides infrastructure automation using Terraform for the Akamai platform.
+If will create a single Akamai configuration just to create redirects. 
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ If will create a Akamai configuration just to create redirects.
 
 ## Description
 
-This project demonstrates how to use Terraform to provision and manage infrastructure resources on the Akamai Edge. It will create an Akamai Delivery Configuration just for redirects. Akamai has a special Cloudlet for this usage but in this project doing everyting just in a single delivery configuration.
+This project demonstrates how to use Terraform to provision and manage infrastructure resources on the Akamai Edge. It will create an Akamai Delivery Configuration just for redirects. Akamai has a special Cloudlet for this usage but in this project doing everyting just in a single delivery configuration. You will find a lot of comments in the TF files with links to docmentation etc.
 
 ## Features
 
@@ -31,7 +31,7 @@ List the key features of your Terraform project:
 Specify any prerequisites that users need to have before using your Terraform project:
 
 - Terraform installed (version 1.5.x)
-- Make sure to have Secure By Default on your contract.
+- Make sure to have Secure By Default (SBD) active on your Akamai contract.
 - Have the Correct Akamai PAPI and EdgeDNS API credentials.
 - DNS Zone should be availabe in EdgeDNS, we're not going to created EdgeDNS zones!
 
