@@ -46,8 +46,8 @@ Instructions on how to get started with your Terraform project:
    $ cd terraform-akamai-redirector
 
 2. Set the correct credentials in .edgerc or use env vars.
-https://techdocs.akamai.com/terraform/docs/overview
-https://techdocs.akamai.com/terraform/docs/gs-authentication#set-environment-variables
+- https://techdocs.akamai.com/terraform/docs/overview
+- https://techdocs.akamai.com/terraform/docs/gs-authentication#set-environment-variables
 
 3. And off you go
    ```shell
@@ -57,7 +57,7 @@ https://techdocs.akamai.com/terraform/docs/gs-authentication#set-environment-var
 
 ## Usage
 
-Just add your hostname:target combinations in the var.hostnames{} map in terraform.tfvars
+Just add your hostname:target combinations in the var.hostnames{} map in terraform.tfvars file:
 ```
 hostnames = {
   "beta.great-demo.com"         = "beta-target.grinwis.com",
@@ -67,4 +67,8 @@ hostnames = {
   "www-marcello.great-demo.com" = "www-marcello-target.grinwis.com"
 }
 ```
-And after the apply you will something like this:
+And after the apply you will see something like this:
+![image](https://github.com/jjgrinwis/terraform-akamai-redirector/assets/3455889/6511cfb6-7216-4649-8a0d-0683a0ee08fb)
+![image](https://github.com/jjgrinwis/terraform-akamai-redirector/assets/3455889/a623c8f2-1d49-433d-b3a2-b7a30008dd6d)
+
+have fun!
