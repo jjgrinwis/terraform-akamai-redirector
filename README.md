@@ -33,17 +33,27 @@ List the key features of your Terraform project:
 
 Specify any prerequisites that users need to have before using your Terraform project:
 
-- Terraform installed (version X.X.X)
+- Terraform installed (version 1.5.x)
 - Make sure to have Secure By Default on your contract.
 - Have the Correct Akamai PAPI and EdgeDNS API credentials.
 - EdgeDNS should be present, we're not going to created EdgeDNS zones.
 
 ## Getting Started
 
-Provide instructions on how to get started with your Terraform project:
+Instructions on how to get started with your Terraform project:
 
 1. Clone this repository:
 
    ```shell
-   $ git clone https://github.com/yourusername/terraform-infrastructure.git
-   $ cd terraform-infrastructure
+   $ git clone https://github.com/jjgrinwis/terraform-akamai-redirector
+   $ cd terraform-akamai-redirector
+
+2. Set the correct credentials in .edgerc or use env vars.
+https://techdocs.akamai.com/terraform/docs/overview
+https://techdocs.akamai.com/terraform/docs/gs-authentication#set-environment-variables
+
+3. And off you go
+   ```shell
+   $ terraform init
+   $ terraform plan
+   $ terraform apply
