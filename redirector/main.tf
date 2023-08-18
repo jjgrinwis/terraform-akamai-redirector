@@ -49,7 +49,7 @@ resource "akamai_cp_code" "cp_code" {
 }
 
 # we're just going to use one edgehostname
-# no need to create separate edgehostname per proprty hostname
+# no need to create separate edgehostname per property hostname
 resource "akamai_edge_hostname" "aka_edge" {
 
   product_id  = resource.akamai_cp_code.cp_code.product_id

@@ -15,7 +15,7 @@ If will create a single Akamai configuration just to create redirects.
 
 ## Description
 
-This project demonstrates how to use Terraform to provision and manage infrastructure resources on the Akamai Edge. It will create an Akamai Delivery Configuration just for redirects. Akamai has a special Cloudlet for this usage but in this project doing everyting just in a single delivery configuration. You will find a lot of comments in the TF files with links to docmentation etc.
+This project demonstrates how to use Terraform to provision and manage infrastructure resources on the Akamai Edge. It will create an Akamai Delivery Configuration just for redirects. Akamai has a special Cloudlet for this usage but in this project doing everyting just in a single delivery configuration. You will find a lot of comments in the TF files with links to documentation etc.
 
 ## Features
 
