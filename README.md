@@ -43,7 +43,7 @@ Instructions on how to get started with your Terraform project:
 
    ```shell
    $ git clone https://github.com/jjgrinwis/terraform-akamai-redirector
-   $ cd terraform-akamai-redirector
+   $ cd terraform-akamai-redirector/redirector
 
 2. Set the correct credentials in .edgerc or use env vars.
 - https://techdocs.akamai.com/terraform/docs/overview
