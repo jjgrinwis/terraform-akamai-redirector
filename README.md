@@ -11,10 +11,7 @@ If will create a Akamai configuration just to create redirects.
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
-  - [Folder Structure](#folder-structure)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
+
 
 ## Description
 
@@ -36,7 +33,7 @@ Specify any prerequisites that users need to have before using your Terraform pr
 - Terraform installed (version 1.5.x)
 - Make sure to have Secure By Default on your contract.
 - Have the Correct Akamai PAPI and EdgeDNS API credentials.
-- EdgeDNS should be present, we're not going to created EdgeDNS zones.
+- DNS Zone should be availabe in EdgeDNS, we're not going to created EdgeDNS zones!
 
 ## Getting Started
 
@@ -57,3 +54,17 @@ https://techdocs.akamai.com/terraform/docs/gs-authentication#set-environment-var
    $ terraform init
    $ terraform plan
    $ terraform apply
+
+## Usage
+
+Just add your hostname:target combinations in the var.hostnames{} map in terraform.tfvars
+```
+hostnames = {
+  "beta.great-demo.com"         = "beta-target.grinwis.com",
+  "www-beta.great-demo.com"     = "www-beta-target.grinwis.com"
+  "www-nora.great-demo.com"     = "www-nora-target.grinwis.com"
+  "www-flap.great-demo.com"     = "www-flap-target.grinwis.com"
+  "www-marcello.great-demo.com" = "www-marcello-target.grinwis.com"
+}
+```
+And after the apply you will something like this:
