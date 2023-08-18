@@ -26,6 +26,9 @@ List the key features of your Terraform project:
 - Automatically request certificates using Secure By Default (SBD) option.
 - Will create CNAME records in EdgeDNS (Feel free to add your own DNS provider)
 
+It's my first test with generating some dynamic JSON using the templatefile() function en jsonencode() in the .tftp template file itself.
+https://developer.hashicorp.com/terraform/language/functions/templatefile#generating-json-or-yaml-from-a-template
+
 ## Prerequisites
 
 Specify any prerequisites that users need to have before using your Terraform project:
